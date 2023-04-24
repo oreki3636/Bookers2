@@ -1,5 +1,4 @@
 
-
 <h2>User info</h2>
 <table class="table">
   <tbody>
@@ -7,14 +6,12 @@
       <th><%= image_tag @user.get_profile_image(100,100) %></th>
     </tr>
     <tr>
-      <th>name
-      <%= @user.name %>
-      </th>
+      <th>name</th>
+      <%=  %>
     </tr>
     <tr>
-      <th>introduction
-      <%= @user.introduction %>
-      </th>
+      <th>introduction</th>
+      <%= %>
     </tr>
   </tbody>
 </table>
@@ -46,8 +43,7 @@
   </thead>
 
 <% @books.each do |book| %>
-  <%= image_tag book.user.get_profile_image(100,100) %>
+ 
   <p>Title：<%= book.title %></p>
   <p>Body：<%= book.body %></p>
 <% end %>
-
