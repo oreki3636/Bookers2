@@ -3,7 +3,7 @@
 <table class="table">
   <tbody>
     <tr>
-      <th><%= image_tag @user.get_profile_image(100,100) %></th>
+      <th><%= image_tag current_user.get_profile_image(100,100) %></th>
     </tr>
     <tr>
       <th>name</th>
@@ -16,8 +16,7 @@
   </tbody>
 </table>
 
-
-
+<a><%= link_to "edit",edit_user_path(current_user.id) %></a>
 
 
 <h1>New book</h1>
@@ -42,8 +41,19 @@
     </tbody>
   </thead>
 
-<% @books.each do |book| %>
- 
-  <p>Title：<%= book.title %></p>
-  <p>Body：<%= book.body %></p>
-<% end %>
+<h2>Book detail</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <td><%= image_tag @book.user.get_profile_image(100,100) %></td>
+      <td><%= link_to book_path(@book.id) do %>
+      <%= @book.title %>
+      <% end %>
+      </td>
+      <td><%= @book.body %></td>
+      <td><%= link_to "edit",edit_book_path(@book.id) %></td>
+      <td><%= link_to "destroy",book_path(@book.id),method: :delete %></td>
+
+    </tr>
+  </tbody>
+</table>

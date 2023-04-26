@@ -19,7 +19,7 @@
   </tbody>
 </table>
 
-
+<a><%=link_to "edit",edit_user_path(@user.id) %></a>
 
 
 
@@ -35,20 +35,26 @@
   <% end %>
 
 
-  <thead>
-    <tbody>
+<h2>Users</h2>
+<table class="table">
+    <thead>
       <tr>
         <th>Title</th>
         <th>Opinion</th>
         <th colspan="3"></th>
       </tr>
+    </thead>
     </tbody>
+    <tr>
 
  <% @users.each do |user| %>
    <%= image_tag user.get_profile_image(100,100) %>
-   <p>Image:<%= image_tag user.get_profile_image(100,100) %></p>
-   <p>Name:<%= user.name %></p>
+   <td>Image:<%= image_tag user.get_profile_image(100,100) %></td>
+   <td>Name:<%= user.name %></td>
+   <td><%= link_to "show",user_path(@user.id) %></td>
  <% end %>
+ </tr>
+ </table>
 
 
 
