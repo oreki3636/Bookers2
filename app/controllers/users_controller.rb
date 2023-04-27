@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
     @user=User.find(params[:id])
     @books=Book.all
+
   end
 
   def update

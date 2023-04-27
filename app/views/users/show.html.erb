@@ -1,4 +1,3 @@
-<%= (params[:id]) %>
 <h2>User info</h2>
 <table class="table">
   <tbody>
@@ -7,11 +6,11 @@
     </tr>
     <tr>
       <th>name</th>
-      <%= @user.name %>
+      <th><%= @user.name %></th>
     </tr>
     <tr>
       <th>introduction</th>
-      <%= @user.introduction %>
+      <th><%= @user.introduction %></th>
     </tr>
   </tbody>
 </table>
@@ -34,19 +33,23 @@
   <% end %>
 
 
+ <table class="table table-hover table-inverse">
   <thead>
-    <tbody>
-      <tr>
-        <th>Title</th>
-        <th>Opinion</th>
-        <th colspan="3"></th>
-      </tr>
-    </tbody>
+    <tr>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
   </thead>
-
-<% @books.each do |book| %>
-  <%= image_tag book.user.get_profile_image(100,100) %>
-  <p>Title：<%= book.title %></p>
-  <p>Body：<%= book.body %></p>
-
-<% end %>
+  <tbody>
+    <tr>
+     <% @books.each do |book| %>
+     <th><%= image_tag book.user.get_profile_image(100,100) %></th>
+     <th>Title：<%= link_to book_path(book.id) do %>
+     <%= book.title %>
+     <% end %></th>
+     <th>Body：<%= book.body %></th>
+     <% end %>
+    </tr>
+  </tbody>
+</table>
