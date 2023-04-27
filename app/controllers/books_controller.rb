@@ -27,8 +27,17 @@ class BooksController < ApplicationController
     @book=Book.find(params[:id])
   end
 
+  def update
+    @book=Book.find(params[:id])
+    @book.update(book_params)
+    @book.save
+    flash[:notice] = "You have updated book successfully."
+    redirect_to book_path(@book.id)
+  end
+
   def destroy
     book=Book.find(params[:id])
+    flash[:notice] = "本当に消しますか？"
     book.destroy
     redirect_to books_path
   end
