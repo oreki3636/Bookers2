@@ -2,6 +2,8 @@ class BooksController < ApplicationController
 
   def show
     @book=Book.find(params[:id])
+    @user=@book.user
+
   end
 
   def index
@@ -37,7 +39,6 @@ class BooksController < ApplicationController
 
   def destroy
     book=Book.find(params[:id])
-    flash[:notice] = "本当に消しますか？"
     book.destroy
     redirect_to books_path
   end
