@@ -20,9 +20,12 @@ class BooksController < ApplicationController
   def create
     @book=Book.new(book_params)
     @book.user_id=current_user.id
-    @book.save
+    if @book.save
+      redirect_to books_path
+    else
+      redirect_to books_path
+    end
     flash[:notice] = "You have created book successfully."
-    redirect_to book_path(@book.id)
   end
 
   def edit
