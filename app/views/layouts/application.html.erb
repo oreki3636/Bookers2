@@ -26,17 +26,17 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%= link_to user_path(current_user.id),class: "nav-link text-light" do %>
+                  <%= link_to user_path(current_user.id), class: "nav-link text-light" do %>
                   <i class="fas fa-home"></i> Home
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to users_path ,class: "nav-link text-light" do %>
+                  <%= link_to users_path, class: "nav-link text-light" do %>
                   <i class="fas fa-users"></i> Users
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to books_path ,class: "nav-link text-light" do %>
+                  <%= link_to books_path, class: "nav-link text-light" do %>
                   <i class="fas fa-book-open"></i> Books
                   <% end %>
                 </li>
@@ -53,17 +53,17 @@
                 </li>
                 <li>
                   <%= link_to home_about_path, class: "nav-link text-ligth" do %>
-                  <i class="fa-solid fa-link"></i> About
+                  <i class="fas fa-link"></i> About
                   <% end %>
                 </li>
                 <li>
                   <%= link_to new_user_registration_path, class: "nav-link text-light" do %>
-                  <i class="fa-solid fa-user-plus"></i> Sign up
+                  <i class="fas fa-user-plus"></i> Sign up
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to user_session_path ,class: "nav-link text-light", method: :post do %>
-                  <i class="fa-solid fa-right-to-bracket"></i> Log in
+                  <%= link_to user_session_path, class: "nav-link text-light", method: :post do %>
+                  <i class="fas fa-sign-in-alt"></i> Log in
                   <% end %>
                 </li>
               <% end %>
